@@ -1,37 +1,18 @@
-<template>
-  <div>
-    <vs-button
-      @click="sync=!sync"
-      color="primary"
-      type="filled"
-    >{{!sync?'Open Alert':'Close Alert'}}</vs-button>
-    <vs-alert :active.sync="sync" closable close-icon="cancel">
-      Lorem ip
-      sum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-    </vs-alert>
-
-    <vs-button color="primary" type="filled">Primary</vs-button>
-    <vs-button color="primary" type="border" icon="home">Home</vs-button>
-  </div>
+<template lang="pug">
+  .container
+      vs-button(color="primary" type="flat" icon="menu" @click="openSideBar()").
+        Menu
+      vs-sidebar(parent="body" color="primary" v-model="sync")
+        vs-button(type="flat" icon="close" color="black" @click="closeSideBar()").
+          Close
+        vs-button.
+          Button  
 </template>
 
-<script>
-export default {
-  name: "Vuesax",
-  data() {
-    return {
-      sync: true
-    };
-  },
-  methods: {
-    closeAlert() {
-      this.sync = false;
-    }
-  }
-};
-</script>
+<script src="../components/Vuesax/component.js"></script>
 
 <style lang="scss" scoped>
+@import "../components/Vuesax/style.scss";
 </style>
 
 
