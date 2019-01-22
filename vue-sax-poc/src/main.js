@@ -6,9 +6,11 @@ import router from './router';
 import 'material-icons/iconfont/material-icons.css';
 import Rx from 'rxjs';
 import VueRx from 'vue-rx';
+import axios from "axios"
+import VueAxios from "vue-axios"
 
 Vue.config.productionTip = false;
-Vue.use(Vuesax, Rx, VueRx);
+Vue.use(Vuesax, Rx, VueRx, VueAxios, axios);
 
 new Vue({
   router,

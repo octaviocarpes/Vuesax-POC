@@ -1,8 +1,9 @@
 <template lang="pug">
   #app
-    vs-navbar(class="nabarx")
+    vs-navbar(class="nabarx navbar" type="border")
       vs-navbar-title
         router-link(to="/") Star Wars
+      vs-spacer
       vs-navbar-item 
         router-link(to="movies") Movies
       vs-navbar-item 
@@ -21,5 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .navbar a {
+    font-size: 1em;
+  }
 }
 </style>
