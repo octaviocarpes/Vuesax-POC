@@ -1,25 +1,35 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('./views/home/Home.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue')
+      path: '/movies',
+      name: 'movies',
+      component: () => import('./views/movies/Movies.vue')
     },
     {
-      path: '/vuesax',
-      name: 'vuesax',
-      component: () => import('./views/Vuesax.vue')
+      path: '/planets',
+      name: 'planets',
+      component: () => import('./views/planets/Planets.vue')
+    },
+    {
+      path: '/spaceships',
+      name: 'spaceships',
+      component: () => import('./views/spaceships/Spaceships.vue')
+    },
+    {
+      path: '/characters',
+      name: 'characters',
+      component: () => import('./views/characters/Characters.vue')
     }
   ]
 });
