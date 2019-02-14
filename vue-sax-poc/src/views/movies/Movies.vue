@@ -1,9 +1,9 @@
 <template lang="pug">
   .movies
-    .div(v-stream="movies$") {{ movies$ }}
+    .div
     h2 Movies
-    vs-images(hover="scale")
-      MoviePoster
+    MoviePoster(v-for="movie in movies$" :key="movie.episode_id" :movie="movie")
+      
 </template>
 
 <script src="./app.js">
@@ -12,4 +12,3 @@
 <style lang="scss">
 @import url("styles.scss");
 </style>
-

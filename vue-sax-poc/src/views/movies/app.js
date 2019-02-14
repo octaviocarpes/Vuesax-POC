@@ -1,18 +1,30 @@
-import { Observable } from 'rxjs';
-import MoviePoster from '@/components/movies/movie-poster/MoviePoster.vue';
+import MoviePoster from "@/components/Movies/movie-poster/MoviePoster.vue";
+import { from } from "rxjs";
 
 export default {
-  name: 'Movies',
+  name: "Movies",
   components: {
     MoviePoster
   },
-  subscriptions() {
-    const movies$ = Observable.from(
-      this.$http.get('https://swapi.co/api/films')
-    );
-
+  data() {
     return {
-      movies$
+      url: "https://swapi.co/api",
+      movies$: {}
     };
+  },
+  created() {
+    this.buildView();
+  },
+  methods: {
+    fetchMovies() {
+      return this.$http.get(`${this.url}/films/`);
+    },
+    buildView() {
+      const self = this;
+      const moviesObserver = from(self.fetchMovies());
+      moviesObserver.subscribe(({ data }) => {
+        self.movies$ = data.results;
+      });
+    }
   }
 };

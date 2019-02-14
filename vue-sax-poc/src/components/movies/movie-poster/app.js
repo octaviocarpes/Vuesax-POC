@@ -1,5 +1,10 @@
-import { Observable } from 'rxjs';
+import EventBus from "@/EventBus";
 
 export default {
-  name: 'MoviePoster'
+  name: "MoviePoster",
+  data() {
+    return {
+      image: "default"
+    };
+  }
 };
