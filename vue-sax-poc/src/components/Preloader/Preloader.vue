@@ -7,6 +7,6 @@
 </script>
 
 <style lang="scss" scoped>
-@import url("./styles.scss");
+@import url("styles.scss");
 </style>
 

@@ -37,5 +37,17 @@ export default {
   .navbar a {
     font-size: 1em;
   }
+
+  #lottie-animation {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    svg {
+      width: 200px !important;
+      height: 200px !important;
+    }
+  }
 }
 </style>
