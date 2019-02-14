@@ -1,11 +1,16 @@
 import Vue from "vue";
+
 import Vuesax from "vuesax";
 import "vuesax/dist/vuesax.css";
+import "material-icons/iconfont/material-icons.css";
+
 import App from "./App.vue";
 import router from "./router";
-import "material-icons/iconfont/material-icons.css";
-import Rx from "rxjs";
+
+// eslint-disable-next-line
+import Rx from 'rxjs';
 import VueRx from "vue-rx";
+
 import axios from "axios";
 import VueAxios from "vue-axios";
 

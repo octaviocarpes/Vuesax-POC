@@ -1,6 +1,6 @@
 <template lang="pug">    
   .poster
-    //- img(src=`@/assets/img/posters/${image}.jpg`)
+    //- img(:src="image")
     h4 {{movie.title}}
 </template>
 

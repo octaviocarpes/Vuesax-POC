@@ -13,7 +13,18 @@
       vs-navbar-item 
         router-link(to="characters") Characters
     router-view
+    Preloader
 </template>
+
+<script>
+import Preloader from "@/components/Preloader/Preloader.vue";
+export default {
+  components: {
+    Preloader
+  }
+};
+</script>
+
 
 <style lang="scss">
 #app {

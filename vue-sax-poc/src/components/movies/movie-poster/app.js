@@ -1,10 +1,12 @@
-import EventBus from "@/EventBus";
-
 export default {
   name: "MoviePoster",
-  data() {
-    return {
-      image: "default"
-    };
+  props: {
+    movie: Object
+  },
+  watch: {
+    movie: (newValue, oldValue) => {
+      console.log(newValue);
+      console.log(oldValue);
+    }
   }
 };

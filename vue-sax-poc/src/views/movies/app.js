@@ -19,6 +19,7 @@ export default {
     fetchMovies() {
       return this.$http.get(`${this.url}/films/`);
     },
+
     buildView() {
       const self = this;
       const moviesObserver = from(self.fetchMovies());
