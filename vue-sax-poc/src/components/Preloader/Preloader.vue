@@ -1,5 +1,5 @@
 <template lang="pug">
-  #lottie-animation
+  #lottie-animation(v-show="visible")
     .lottie
 </template>
 

@@ -1,4 +1,5 @@
 import MoviePoster from "@/components/Movies/movie-poster/MoviePoster.vue";
+import EventBus from "@/EventBus";
 import { from } from "rxjs";
 
 export default {
@@ -25,7 +26,12 @@ export default {
       const moviesObserver = from(self.fetchMovies());
       moviesObserver.subscribe(({ data }) => {
         self.movies$ = data.results;
+        self.hidePreloader();
       });
+    },
+
+    hidePreloader() {
+      EventBus.$emit("HidePreloader");
     }
   }
 };

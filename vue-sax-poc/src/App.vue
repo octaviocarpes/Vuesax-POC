@@ -18,9 +18,16 @@
 
 <script>
 import Preloader from "@/components/Preloader/Preloader.vue";
+import EventBus from "@/EventBus";
+
 export default {
   components: {
     Preloader
+  },
+  watch: {
+    $route: (to, from) => {
+      EventBus.$emit("ShowPreloader");
+    }
   }
 };
 </script>
@@ -41,9 +48,10 @@ export default {
   #lottie-animation {
     width: 200px;
     height: 200px;
-    position: relative;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     svg {
       width: 200px !important;
       height: 200px !important;
