@@ -1,8 +1,8 @@
 <template lang="pug">
   .movies
-    .div
     h2 Movies
-    MoviePoster(v-for="movie in movies$" :key="movie.episode_id" :movie="movie")
+    .posters
+      MoviePoster(v-for="movie in movies$" :key="movie.episode_id" :movie="movie")
       
 </template>
 

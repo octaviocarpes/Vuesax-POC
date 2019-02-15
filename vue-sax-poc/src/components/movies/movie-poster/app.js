@@ -3,10 +3,18 @@ export default {
   props: {
     movie: Object
   },
-  watch: {
-    movie: (newValue, oldValue) => {
-      console.log(newValue);
-      console.log(oldValue);
+  data() {
+    return {
+      image: "@/assets/img/default.jpg"
+    };
+  },
+  computed: {
+    poster() {
+      const self = this;
+      if (self.movie.title) {
+        return `${self.movie.title}.jpg`;
+      }
+      return "default.jpg";
     }
   }
 };
