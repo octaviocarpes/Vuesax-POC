@@ -1,7 +1,7 @@
 <template lang="pug">    
   .poster
     img(:src="require(`@/assets/img/posters/${poster}`)")
-    h3 {{movie.title}}
+    h4 {{ movie.title }}
 </template>
 
 <script src="./app.js">

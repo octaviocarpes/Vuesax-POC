@@ -1,16 +1,19 @@
 import MoviePoster from "@/components/movies/movie-poster/MoviePoster.vue";
+import { Carousel, Slide } from 'vue-carousel';
 import EventBus from "@/EventBus";
 import { from } from "rxjs";
 
 export default {
   name: "Movies",
   components: {
-    MoviePoster
+    MoviePoster,
+    Carousel,
+    Slide
   },
   data() {
     return {
       url: "https://swapi.co/api",
-      movies$: {}
+      movies$: []
     };
   },
   created() {
@@ -22,6 +25,10 @@ export default {
     },
 
     buildView() {
+      this.createMoviesObserver();
+    },
+
+    createMoviesObserver() {
       const self = this;
       const moviesObserver = from(self.fetchMovies());
       moviesObserver.subscribe(({ data }) => {
@@ -29,7 +36,7 @@ export default {
         self.hidePreloader();
       });
     },
-
+    
     hidePreloader() {
       EventBus.$emit("HidePreloader");
     }
