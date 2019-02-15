@@ -1,4 +1,4 @@
-import MoviePoster from "@/components/Movies/movie-poster/MoviePoster.vue";
+import MoviePoster from "@/components/movies/movie-poster/MoviePoster.vue";
 import EventBus from "@/EventBus";
 import { from } from "rxjs";
 
