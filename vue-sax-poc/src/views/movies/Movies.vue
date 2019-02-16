@@ -1,7 +1,7 @@
 <template lang="pug">
   .movies
     h2 Movies
-    .movie-info(v-if="movie")
+    .movie-info(v-if="movie.title")
       .movie-poster
         img(:src="require(`@/assets/img/posters/${poster}`)")
       .info

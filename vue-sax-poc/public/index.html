@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Kanit|Muli|Roboto" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Kanit|Muli|Roboto"
+      rel="stylesheet"
+    />
+    <script type="text/javascript">
+      !(function(a, b, c, d, e, f, g, h) {
+        (a.RaygunObject = e),
+          (a[e] =
+            a[e] ||
+            function() {
+              (a[e].o = a[e].o || []).push(arguments);
+            }),
+          (f = b.createElement(c)),
+          (g = b.getElementsByTagName(c)[0]),
+          (f.async = 1),
+          (f.src = d),
+          g.parentNode.insertBefore(f, g),
+          (h = a.onerror),
+          (a.onerror = function(b, c, d, f, g) {
+            h && h(b, c, d, f, g),
+              g || (g = new Error(b)),
+              (a[e].q = a[e].q || []),
+              a[e].q.push({
+                e: g
+              });
+          });
+      })(
+        window,
+        document,
+        'script',
+        '//cdn.raygun.io/raygun4js/raygun.min.js',
+        'rg4js'
+      );
+    </script>
+    <script type="text/javascript">
+      !function(a,b,c,d,e,f,g,h){a.RaygunObject=e,a[e]=a[e]||function(){
+      (a[e].o=a[e].o||[]).push(arguments)},f=b.createElement(c),g=b.getElementsByTagName(c)[0],
+      f.async=1,f.src=d,g.parentNode.insertBefore(f,g),h=a.onerror,a.onerror=function(b,c,d,f,g){
+      h&amp;&amp;h(b,c,d,f,g),g||(g=new Error(b)),a[e].q=a[e].q||[],a[e].q.push({
+      e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
+    </script>
     <title>vue-sax-poc</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but vue-sax-poc doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but vue-sax-poc doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    rg4js('apiKey', '1mZ2qMn3fxWqAZi4OCcSQ');
+    rg4js('enablePulse', true);
+    rg4js('Movies Page', { type: 'pageView', path: 'movies' });
+    rg4js('enableCrashReporting', true);
+  </script>
 </html>
