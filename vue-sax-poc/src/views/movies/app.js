@@ -1,5 +1,5 @@
 import MoviePoster from "@/components/movies/movie-poster/MoviePoster.vue";
-import { Carousel, Slide } from 'vue-carousel';
+import { Carousel, Slide } from "vue-carousel";
 import EventBus from "@/EventBus";
 import { from } from "rxjs";
 
@@ -13,11 +13,14 @@ export default {
   data() {
     return {
       url: "https://swapi.co/api",
-      movies$: []
+      movies$: [],
+      movie: Object,
+      poster: "default.jpg"
     };
   },
   created() {
     this.buildView();
+    this.listenForMovieInfo();
   },
   methods: {
     fetchMovies() {
@@ -34,11 +37,24 @@ export default {
       moviesObserver.subscribe(({ data }) => {
         self.movies$ = data.results;
         self.hidePreloader();
+        self.buildMovie(data.results[0]);
       });
     },
-    
+
+    buildMovie(movieData) {
+      this.movie = movieData;
+      this.poster = `${movieData.title}.jpg`;
+    },
+
     hidePreloader() {
       EventBus.$emit("HidePreloader");
+    },
+
+    listenForMovieInfo() {
+      const self = this;
+      EventBus.$on("MovieInfo", movie => {
+        self.buildMovie(movie);
+      });
     }
   }
 };

@@ -1,5 +1,5 @@
 <template lang="pug">    
-  .poster
+  .poster(@click="sendMovieData()")
     img(:src="require(`@/assets/img/posters/${poster}`)")
     h4 {{ movie.title }}
 </template>

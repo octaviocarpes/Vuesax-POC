@@ -1,3 +1,5 @@
+import EventBus from "@/EventBus";
+
 export default {
   name: "MoviePoster",
   props: {
@@ -15,6 +17,12 @@ export default {
         return `${self.movie.title}.jpg`;
       }
       return "default.jpg";
+    }
+  },
+  methods: {
+    sendMovieData() {
+      const self = this;
+      EventBus.$emit("MovieInfo", self.movie);
     }
   }
 };
