@@ -9,3 +9,4 @@ steps:
     dir: 'Vuesax-POC/vue-sax-poc'
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--quiet']
+    dir: 'Vuesax-POC/vue-sax-poc'
