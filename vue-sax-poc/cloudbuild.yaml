@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['clone', 'https://github.com/octaviocarpes/Vuesax-POC.git']
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+    dir: 'Vuesax-POC/vue-sax-poc'
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+    dir: 'Vuesax-POC/vue-sax-poc'
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', '--quiet']
