@@ -8,5 +8,5 @@ steps:
     args: ['run', 'build']
     dir: 'Vuesax-POC/vue-sax-poc'
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', '--quiet']
+    args: ['app', 'deploy', 'app.yaml', '--quiet']
     dir: 'Vuesax-POC/vue-sax-poc'
